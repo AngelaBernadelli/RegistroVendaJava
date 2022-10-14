@@ -1,0 +1,104 @@
+public class Produto {
+    int codigo;
+    String descricao;
+    float valorVenda;
+    float valorCusto;
+    boolean promocao;
+
+    public Produto(int codigo, String descricao, float valorVenda, float valorCusto, boolean promocao) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.valorVenda = valorVenda;
+        this.valorCusto = valorCusto;
+        this.promocao = promocao;
+    }
+
+    public boolean getpromocao() {
+        return promocao;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public float getValorVenda() {
+        return valorVenda;
+    }
+
+    public void setValorVenda(float valorVenda) {
+        this.valorVenda = valorVenda;
+    }
+
+    public float getValorCusto() {
+        return valorCusto;
+    }
+
+    public void setValorCusto(float valorCusto) {
+        this.valorCusto = valorCusto;
+    }
+
+    public boolean isPromocao() {
+        return promocao;
+    }
+
+    public void setPromocao(boolean promocao) {
+        this.promocao = promocao;
+    }
+
+    public static class Vendedor {
+        String nome;
+        int codigo;
+        float comissao;
+        String endereco;
+
+        public Vendedor(String nome, int codigo, String endereco) {
+            this.nome = nome;
+            this.codigo = codigo;
+            this.endereco = endereco;
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public int getCodigo() {
+            return codigo;
+        }
+
+        public void setCodigo(int codigo) {
+            this.codigo = codigo;
+        }
+
+        public float getComissao() {
+            return comissao;
+        }
+
+        public void setComissao(float comissao) {
+            this.comissao = comissao;
+        }
+
+        public String getEndereco() {
+            return endereco;
+        }
+
+        public void setEndereco(String endereco) {
+            this.endereco = endereco;
+        }
+    }
+}
