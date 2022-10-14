@@ -1,0 +1,66 @@
+public class UsaVenda {
+    public static void main(String[] args) {
+        Produto produto1 = new Produto(123,"camiseta", 400f, 100f,false);
+
+        Vendedor vendedor1 = new Vendedor("Angela", 321, "Rua da Paz");
+        vendedor1.setComissao(0f);
+
+
+        Vendas venda1 = new Vendas();
+        venda1.setProduto(produto1);
+        venda1.setVendedor(vendedor1);
+        venda1.setQuantidadeItens(2);
+        venda1.setDesconto(0f);
+
+
+        float valorVenda1 = venda1.calcularValor();
+        venda1.setValor(valorVenda1);
+        System.out.printf("Valor da venda: %.2f", valorVenda1);
+
+        float valorComissao1 = venda1.calcularComissao();
+        System.out.printf("Valor comissão: %.2f", valorComissao1);
+
+        venda1.imprimir();
+
+
+        Produto produt2 = new Produto( 456, "short", 80f, 100f, true);
+
+        Vendedor vendedor2 = new Vendedor("Jessica", 654, "Rua Augusta");
+
+        Vendas venda2 = new Vendas();
+        venda2.setProduto(produt2);
+        venda2.setVendedor(vendedor2);
+        venda2.setQuantidadeItens(3);
+        venda2.setDesconto(10f);
+
+        float valorVenda2 = venda2.calcularValor();
+        venda2.setValor(valorVenda2);
+        System.out.printf("Valor venda: %.2f", valorVenda2);
+
+
+        float valorComissao2 = venda2.calcularValor();
+        System.out.printf("Valor comissão: %.2f", valorComissao2);
+
+        venda2.imprimir();
+
+
+        Vendas venda3 = new Vendas();
+        venda3.setProduto(produt2);
+        venda3.setVendedor(vendedor2);
+        venda3.setQuantidadeItens(2);
+
+        float valorDesconto = venda3.efetuarDesconto(0.3f);
+        System.out.printf("Valor venda com desconto: R$ " +valorDesconto);
+
+        float valorVenda3 = venda3.calcularValor();
+        venda3.setValor(valorVenda3);
+        System.out.printf("Valor da comissão: %.2f", valorVenda3);
+
+        float valorComissao3 = venda3.calcularComissao();
+        System.out.printf("Valor da comissão: 2.f", valorComissao3);
+
+        venda3.imprimir();
+
+    }
+
+}
