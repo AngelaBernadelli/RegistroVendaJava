@@ -1,0 +1,92 @@
+public class Vendas {
+    Produto produto;
+    Vendedor vendedor;
+    float desconto;
+    int quantidadeItens;
+    float valor;
+
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor (Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public float getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(float desconto) {
+        this.desconto = desconto;
+    }
+
+    public int getQuantidadeItens() {
+        return quantidadeItens;
+    }
+
+    public void setQuantidadeItens(int quantidadeItens) {
+        this.quantidadeItens = quantidadeItens;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+
+    public void setValor(float valor) {
+        this.valor = valor;
+
+    }
+
+    public float calcularValor() {
+        float valor = quantidadeItens * produto.getValorVenda() - desconto;
+        return valor;
+    }
+
+    public float calcularComissao() {
+        float valorComissao = valor * vendedor.getComissao();
+
+        if (produto.getpromocao()) {
+            valorComissao = valorComissao / 2;
+        }
+
+        return valorComissao;
+
+    }
+
+    public  float efetuarDesconto(float porcentagem) {
+        float valorDesconto = produto.getValorVenda()* porcentagem;
+        float valorProdutoComDesconto = produto.getValorVenda() - valorDesconto;
+
+        if (valorProdutoComDesconto < produto.getValorCusto()){
+            System.out.printf("Alerta: Desconto não pode ser efetuado");
+            System.out.printf("Valor com desconto menor que o valor de custo");
+            return  produto.getValorVenda();
+        }
+        return valorProdutoComDesconto;
+
+    }
+
+    public void imprimir(){
+        System.out.println("Código do Vendedor: "+ vendedor.getCodigo());
+        System.out.println("Nome do Vendedor: " + vendedor.getNome());
+        System.out.println("Comissão do Vendedor: "+ vendedor.getComissao());
+        System.out.println("Quantidade de itens vendidos: "+ quantidadeItens);
+        System.out.println("Qual o código do produto: "+ produto.getCodigo());
+        System.out.println("Descrição do produto: "+produto.getDescricao());
+        System.out.println("Valor de venda do Produto: "+ produto.getValorVenda());
+        System.out.println("Produto em promoção: " + (produto.getpromocao() ? "sim" : "não"));
+        System.out.println("Valor do desconto sobre o produto: "+ desconto);
+        System.out.println("Valor total da Venda: "+ valor);
+
+    }
+}
